@@ -1,11 +1,10 @@
-factorize = (num, start) ->
-  n = start ? 2
-  lim = Math.sqrt(num)
-  while (n <= lim)
+factorize = (num) ->
+  n = 2
+  while (n <= Math.sqrt(num))
     if (num % n is 0)
-      return factorize(num / n, n).concat([n])
+      num = num / n
     else
       n++
-  return [num]
+  return num
   
-alert(factorize(600851475143)[0])
+alert(factorize(600851475143))
