@@ -1,8 +1,7 @@
 factorize = (num, start) ->
-  n = start
-  n ?= 2
+  n = start ? 2
   lim = Math.sqrt(num)
-  while (n < lim)
+  while (n <= lim)
     if (num % n is 0)
       return factorize(num / n, n).concat([n])
     else
